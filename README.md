@@ -1,6 +1,6 @@
 # cs263
 
-This project is focused on testing the performance differences between known exploits in C++ and their memory-safe counterparts in Rust. 
+This project is focused on testing the performance differences between known vulnerability C++ code and their memory-safe counterparts in Rust. 
 
 I will be making the comparisons using multiple Common Vulnerabilities & Exposures (CVEs) in [gnu coreutils](https://github.com/coreutils/coreutils), as it is an open source, very widely used program, and there is a current [popular reimplementation of it using Rust](https://github.com/uutils/coreutils), so I can easily compare the two. 
 Here are some of the examples that I will be using:
