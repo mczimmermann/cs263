@@ -8,5 +8,5 @@ Here are some of the examples that I will be using:
 * [CVE-2025-5278](https://www.cve.org/CVERecord?id=CVE-2025-5278), heap buffer under-read in chroot
 * [CVE-2015-4042](https://www.cve.org/CVERecord?id=CVE-2015-4042), integer overflow in keycompare_mb() function in sort
 
-The current plan is to use `google-benchmark` in order to test the performance of the C++ code, and use `criterion` to test the performance of the Rust code. For both languages, we will benchmark a "normal", non-exploit run, and for examples where a proof of concept is available, we will also benchmark the exploit. Note that overwhelmingly, users will only experience a normal execution path so this is sufficient. 
+The current plan is to use `google-benchmark` in order to test the performance of the C++ code, and use `criterion` to test the performance of the Rust code. For both languages, I will benchmark a "normal", non-exploit run, and for examples where a proof of concept is available, I will also benchmark the exploit. Note that overwhelmingly, users will only experience a normal execution path so this is sufficient. 
 Furthermore, optimal performance is theoretically not necessary for an attacker that wants to trigger the vulnerabilities. 
