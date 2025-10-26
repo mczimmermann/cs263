@@ -1,0 +1,15 @@
+[package]
+name = "rust_overflow"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "rust_overflow"
+path = "src/lib.rs"
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "overflow_bench"
+harness = false
