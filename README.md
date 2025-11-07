@@ -13,3 +13,12 @@ Furthermore, optimal performance is theoretically not necessary for an attacker 
 
 ### basic_idea 
 This folder contains a small proof of concept for the larger project, done using a basic integer overflow. In order to run the C++ benchmark, you will need to run make all inside basic_idea/cplusplus. To run the rust benchmark, you will need to run cargo bench inside basic_idea/rust/benches. 
+
+
+In order to set up and run the examples, you will need to execute the following steps:
+cd coreutils
+./bootstrap
+./configure
+make src/split
+
+This will build the required C coreutils programs for our benchmarking.
