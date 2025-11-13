@@ -16,7 +16,11 @@ This folder contains a small proof of concept for the larger project, done using
 
 ### cve-2024-0684
 This folder contains Rust and C benchmarks of the coreutils function split(), which had a memory vulnerability in coreutils version 9.2. Note that in order to run the C benchmark correctly (because GNU coreutils usually creates a child process instead of linking like a Rust library), we have edited split.c to expose its main function and included it in this folder as well. 
+
 In order to build and run the docker:
+
 `docker build -t split_benchmark .`
+
 `docker run --rm split_benchmark > output.log 2>&1`
+
 This will create a log of the benchmark results. 
