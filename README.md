@@ -15,7 +15,7 @@ Furthermore, optimal performance is theoretically not necessary for an attacker 
 This folder contains a small proof of concept for the larger project, done using a basic integer overflow. In order to run the C++ benchmark, you will need to run make all inside basic_idea/cplusplus. To run the rust benchmark, you will need to run cargo bench inside basic_idea/rust/benches. 
 
 ### cve-2024-0684
-This folder contains Rust and C benchmarks of the coreutils function split(), which had a memory vulnerability in coreutils version 9.2. Note that in order to run the C benchmark correctly (because GNU coreutils usually creates a child process instead of linking like a Rust library), we have edited split.c to expose its main function and included it in this folder as well. 
+This folder contains Rust and C benchmarks of the coreutils function split(), which had a memory vulnerability in coreutils version 9.2. Note that in order to run the C benchmark correctly (because GNU coreutils usually creates a child process instead of linking like a Rust library), I have edited split.c to expose its main function and included it in this folder as well. 
 
 In order to build and run the docker:
 
