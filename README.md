@@ -18,17 +18,19 @@ This folder contains a small proof of concept for the larger project, done using
 ### cve-2024-0684
 This folder contains Rust and C benchmarks of the coreutils function split(), which had a heap overflow vulnerability in coreutils version [9.2](https://gitweb.git.savannah.gnu.org/gitweb/?p=coreutils.git;a=commit;h=82bb131c551039971d6668dedc1975a770df88b9). In order to run the C benchmark correctly (because GNU coreutils usually creates a child process instead of linking like a Rust library), I have edited split.c to expose its main function and included it in this folder as well. ***Note that I have already committed the results from running this on my local, which will get overwritten if you run the following commands.***
 
-In order to build and run the docker:
+To run the Dockerfile in extract_split, use the commands:
+
+`docker build -t extract_split .`
+
+`docker run -v $(pwd):/output -it extract_split cp /split.c /output/split.c`
+
+In order to build and run the benchmark docker:
 
 `docker build -t split_benchmark .`
 
 `docker run --rm split_benchmark > results/output.log 2>&1`
 
 This will create a log of the benchmark results. 
-
-To run the Dockerfile in extract_split, use the command:
-
-`docker run -v $(pwd):/output -it <image-name> cp /split.c /output/split.c`
 
 
 ### cve-2025-5278
@@ -40,6 +42,10 @@ This folder contains Rust and C benchmarks of the coreutils date command, which 
 
 In order to build gnu coreutils and extract date.c:
 
-`docker build --platform linux/amd64 -t coreutils-vuln .`
+`docker build --platform linux/amd64 -t extract_date .`
 
-`docker run -v $(pwd):/output coreutils-vuln cp /tmp/date.c /output/date.c`
+`docker run -v $(pwd):/output extract_date cp /tmp/date.c /output/date.c`
+
+Because this is an older version and there are some tricks to get all the versions matching, you need to build the Docker that runs this experiment with the platform specified:
+
+`docker build --platform linux/amd64 -t date_benchmark .`
