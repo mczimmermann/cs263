@@ -36,6 +36,12 @@ This will create a log of the benchmark results.
 ### cve-2025-5278
 This folder contains Rust and C benchmarks of the coreutils function sort(), which had a heap buffer under-read vulnerability in coreutils versions [7.2](https://gitweb.git.savannah.gnu.org/gitweb/?p=coreutils.git;a=commit;h=3dcf7a4d23f328e1eb6dac3c1232b98ddc833354) onwards, until it was fixed in [this commit](https://cgit.git.savannah.gnu.org/cgit/coreutils.git/commit/?id=8c9602e3a145e9596dc1a63c6ed67865814b6633) in 2025. To keep this slightly more up to date, I will benchmark the same version (9.2) as cve-2024-0684.
 
+In order to build and run the benchmark docker:
+
+docker build -t sort_benchmark .
+
+docker run --rm sort_benchmark > results/output.log 2>&1
+
 
 ### cve-2014-9471
 This folder contains Rust and C benchmarks of the coreutils date command, which allowed arbitrary code execution in coreutils versions prior to [8.23](https://gitweb.git.savannah.gnu.org/gitweb/?p=coreutils.git;a=commit;h=22c8c23f4090adf98f790f7dd6704c51415e475d). The version I benchmarked is [8.2](https://gitweb.git.savannah.gnu.org/gitweb/?p=coreutils.git;a=commit;h=70d023b076ab82ad000a404310bc0aee2fa3ac80)
