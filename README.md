@@ -38,9 +38,9 @@ This folder contains Rust and C benchmarks of the coreutils function sort(), whi
 
 In order to build and run the benchmark docker:
 
-docker build -t sort_benchmark .
+`docker build -t sort_benchmark .`
 
-docker run --rm sort_benchmark > results/output.log 2>&1
+`docker run --rm sort_benchmark > results/output.log 2>&1`
 
 
 ### cve-2014-9471
