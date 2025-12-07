@@ -55,3 +55,5 @@ In order to build gnu coreutils and extract date.c:
 Because this is an older version and there are some tricks to get all the versions matching, you need to build the Docker that runs this experiment with the platform specified:
 
 `docker build --platform linux/amd64 -t date_benchmark .`
+
+`docker run --rm date_benchmark > results/output.log 2>&1`
