@@ -1,5 +1,7 @@
 # cs263
 
+Credit Attribution: Please note that AI tools were used in developing the code in this github.
+
 This project is focused on testing the performance differences between known vulnerable C++ code and their memory-safe counterparts in Rust. 
 
 I will be making the comparisons using multiple Common Vulnerabilities & Exposures (CVEs) in [gnu coreutils](https://github.com/coreutils/coreutils) (see [versions here](https://gitweb.git.savannah.gnu.org/gitweb/?p=coreutils.git)), as it is an open source, very widely used program, and there is a current [popular reimplementation of it using Rust](https://github.com/uutils/coreutils), so I can easily compare the two. 
